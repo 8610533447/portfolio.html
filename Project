@@ -1,0 +1,50 @@
+import time
+
+# -------------------------
+# Quiz Questions
+# -------------------------
+quiz = {
+    "What is the capital of India?": {
+        "options": ["1. Mumbai", "2. Delhi", "3. Kolkata", "4. Chennai"],
+        "answer": "2"
+    },
+    "Which language is used for web apps?": {
+        "options": ["1. Python", "2. Java", "3. PHP", "4. All of the above"],
+        "answer": "4"
+    },
+    "Who is known as the father of computers?": {
+        "options": ["1. Charles Babbage", "2. Alan Turing", "3. Dennis Ritchie", "4. James Gosling"],
+        "answer": "1"
+    },
+    "Which of the following is a Python framework?": {
+        "options": ["1. Django", "2. React", "3. Laravel", "4. Angular"],
+        "answer": "1"
+    }
+}
+
+# -------------------------
+# Quiz Function
+# -------------------------
+def start_quiz():
+    print("\n===== Welcome to Online Quiz System =====")
+    name = input("Enter your name: ")
+    score = 0
+    q_no = 1
+    
+    start_time = time.time()  # Timer Start
+
+    for question, data in quiz.items():
+        print(f"\nQ{q_no}: {question}")
+        for option in data["options"]:
+            print(option)
+
+        answer = input("Enter your answer (1-4): ")
+        if answer == data["answer"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print("❌ Wrong! Correct answer is:", data["answer"])
+        
+        q_no += 1
+
+    end_time =
